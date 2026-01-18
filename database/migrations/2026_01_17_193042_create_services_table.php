@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('insurance_id')->nullable()->constrained()->onDelete('set null');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->boolean('applies_insurance')->default(false);
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

@@ -17,11 +17,13 @@ class Service extends Model
         'insurance_id',
         'user_id',
         'applies_insurance',
+        'status',
     ];
 
     protected $casts = [
         'cost' => 'decimal:2',
         'applies_insurance' => 'boolean',
+        'status' => 'boolean',
     ];
 
     /**

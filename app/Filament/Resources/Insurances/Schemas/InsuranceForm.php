@@ -32,12 +32,22 @@ class InsuranceForm
                     ->email()
                     ->maxLength(255),
                 
-                TextInput::make('coverage_or_rates')
+                TextInput::make('coverage')
                     ->label('Cobertura (Monto)')
                     ->numeric()
                     ->prefix('$')
                     ->step(0.01)
                     ->nullable(),
+                
+                Textarea::make('notes')
+                    ->label('Notas')
+                    ->rows(3)
+                    ->columnSpanFull(),
+                
+                \Filament\Forms\Components\Toggle::make('status')
+                    ->label('Estado')
+                    ->default(true)
+                    ->required(),
             ]);
     }
 }

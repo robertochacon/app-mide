@@ -16,12 +16,15 @@ class Insurance extends Model
         'address',
         'phone',
         'email',
-        'coverage_or_rates',
+        'coverage',
+        'notes',
         'user_id',
+        'status',
     ];
 
     protected $casts = [
-        'coverage_or_rates' => 'decimal:2',
+        'coverage' => 'decimal:2',
+        'status' => 'boolean',
     ];
 
     /**

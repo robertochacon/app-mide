@@ -17,8 +17,10 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->text('coverage_or_rates')->nullable();
+            $table->decimal('coverage', 10, 2)->nullable();
+            $table->text('notes')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
